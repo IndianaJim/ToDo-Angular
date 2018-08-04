@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = "My Todo's";
+  title = "Jim Todo's";
   todos = [
     {
       label: "Bring Milk",
@@ -37,5 +37,9 @@ export class AppComponent {
       done: false
     };
     this.todos.push(newTodo);
+  }
+
+  deleteTodo(todo) {
+    this.todos = this.todos.filter(t => t.label !== todo.label);
   }
 }
